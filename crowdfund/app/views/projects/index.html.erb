@@ -1,10 +1,11 @@
+<h1> <%= pluralize(Project.count, 'Project') %> </h1>
 <article>
 <ul>
 <% @projects.each do |project| %>
 <li><strong><%= project.name %></strong></li>
-<p> <%= project.description %> </p>
+<p> <%= truncate(project.description, length: 10, separator: ' ') %> </p>
 <p> <%= number_to_currency(project.target_pledge_amount, unit: '€') %> </p>
-<p> <%= project.pledging_ends_on %> </p>
+<p> <%= format_pledging_ends_on(project) %> </p>
 <p> <a href="<%=project.website%>" target=_blank><%= project.website %> </a> </p>
 <%end%>
 </ul>
