@@ -1,6 +1,11 @@
+<article>
 <ul>
 <% @projects.each do |project| %>
-<li><%= project %> </li>
+<li><strong><%= project.name %></strong></li>
+<p> <%= project.description %> </p>
+<p> <%= number_to_currency(project.target_pledge_amount, unit: '€') %> </p>
+<p> <%= project.pledging_ends_on %> </p>
+<p> <a href="<%=project.website%>" target=_blank><%= project.website %> </a> </p>
 <%end%>
 </ul>
-
+</article>

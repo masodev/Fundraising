@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
 
   def index
-   @projects = ['Porismus', 'DAC', 'flirt']
+   @projects = Project.all
   end
 
 end
