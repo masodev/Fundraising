@@ -1,13 +1,14 @@
 
-<h1> <%= pluralize(Project.count, 'Project') %> </h1>
-<article>
-<ul>
+
+<ul class="list-group">
+<%= pluralize(Project.count, 'Project') %> 
+
 <% @projects.each do |project| %>
-<li><strong><%= link_to project.name, project %></strong></li>
-<p> <%= truncate(project.description, length: 10, separator: ' ') %> </p>
-<p> <%= number_to_currency(project.target_pledge_amount, unit: '€') %> </p>
-<p> <%= format_pledging_ends_on(project) %> </p>
-<p> <a href="<%=project.website%>" target=_blank><%= project.website %> </a> </p>
+<li class="list-group-item"><strong><%= link_to project.name, project %></strong>
+<p class="list-group-item-text"><%= truncate(project.description, length: 10, separator: ' ') %> </p>
+<p class="list-group-item-text"> <%= format_pledging_ends_on(project) %> </p>
+<a href="<%=project.website%>" target=_blank><%= project.website %> </a>
+<p class="badge"><%= number_to_currency(project.target_pledge_amount, unit: '€') %> </p> 
+</li>
 <%end%>
 </ul>
-</article>
