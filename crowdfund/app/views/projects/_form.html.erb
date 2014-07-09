@@ -1,0 +1,22 @@
+<%= form_for(@project) do |f| %>
+  <p>
+    <%= f.label :name %> <br/>
+    <%= f.text_field :name, autofocus: true, class: "form-control"%>
+  </p>
+   <p>
+    <%= f.label :description %> <br/>
+    <%= f.text_field :description, class: "form-control" %>
+  </p>
+     <p>
+    <%= f.label :target_pledge_amount %> <br/>
+    <%= f.number_field :target_pledge_amount, class: "form-control" %>
+  </p>
+   <p>
+    <%= f.label :Pledging_ends_on %> <br/>
+    <%= f.date_select :pledging_ends_on, class: "form-control" %>
+  </p>
+   <p>
+  	<%= f.submit class: "btn btn-success" %>
+    <%= link_to "Cancel", projects_path, class: "btn btn-warning" %>
+  </p>
+<%end%>

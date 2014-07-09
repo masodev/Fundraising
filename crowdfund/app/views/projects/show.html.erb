@@ -8,6 +8,6 @@
 <p> <a href="<%=@project.website%>" target=_blank><%= @project.website %> </a> </p>
 </article>
 <ul class="nav nav-pills">
-  <%= link_to "All Projects", projects_path %> |
-  <%= link_to "Edit", edit_project_path(@project) %>
+  <%= link_to "All Projects", projects_path, class: "btn btn-primary" %>
+  <%= link_to "Edit", edit_project_path(@project), class: "btn btn-warning" %>
 </ul>
