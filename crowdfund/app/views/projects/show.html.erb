@@ -10,4 +10,5 @@
 <ul class="nav nav-pills">
   <%= link_to "All Projects", projects_path, class: "btn btn-primary" %>
   <%= link_to "Edit", edit_project_path(@project), class: "btn btn-warning" %>
+     <%= link_to "Delete", project_path(@project), class: "btn btn-danger" , method: :delete, data: { confirm: 'Are you sure?' } %>
 </ul>

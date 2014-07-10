@@ -23,9 +23,15 @@ class ProjectsController < ApplicationController
   end
 
   def create
-   @project = Project.new(project_params)
-   @project.save
-   redirect_to @project
+    @project = Project.new(project_params)
+    @project.save
+    redirect_to @project
+  end
+
+  def destroy
+    @project = Project.find(params[:id])
+    @project.destroy
+    redirect_to @project
   end
 
 private
