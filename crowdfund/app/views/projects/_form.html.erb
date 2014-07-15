@@ -1,7 +1,12 @@
 <%= form_for(@project) do |f| %>
 
-<%= @project.errors.full_messages.to_sentence %>
+<% unless @project.errors.full_messages.to_sentence.blank? %>
 
+ <div class="alert alert-danger">
+ <a href="#" class="close" data-dismiss="alert">&times;</a>
+<strong><%= @project.errors.full_messages.to_sentence %></strong>
+</div>
+<%end%>
 <div>
   <p>
     <%= f.label :name %> <br/>

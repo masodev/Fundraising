@@ -1,5 +1,6 @@
 class Project < ActiveRecord::Base
   
+ has_many :pledges 
 validates :name, :website, presence: true
 
   def pledging_expired?
