@@ -1,7 +1,8 @@
 class Project < ActiveRecord::Base
   
- has_many :pledges 
-validates :name, :website, presence: true
+ has_many :pledges, dependent: :destroy
+
+ validates :name, :website, presence: true
 
   def pledging_expired?
     pledging_ends_on < Date.today
